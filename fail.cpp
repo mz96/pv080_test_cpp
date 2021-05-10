@@ -1,19 +1,13 @@
 #include <iostream>
 int Static[5];
-int staticLen = 5;
 int memcheckFailDemo(int* arrayStack, unsigned int arrayStackLen, 
 	int* arrayHeap, unsigned int arrayHeapLen) {
   int Stack[5];
-  int stackLen = 5;
   
+  Static[4] = 0; 
 
-  if ((staticLen * sizeof(int)) >= (sizeof(int) * 101)) {
-	Static[100] = 0; 
-  }
+  Stack[4] = 0; 
 
-  if ((stackLen * sizeof(int)) >= (sizeof(int) * 101)) {
-	Stack[100] = 0; 
-  }
 
   for (int i = 0; i < 5; i++) Stack [i] = 0;
 
