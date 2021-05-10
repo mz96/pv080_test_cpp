@@ -4,7 +4,10 @@ int memcheckFailDemo(int* arrayStack, unsigned int arrayStackLen,
 	int* arrayHeap, unsigned int arrayHeapLen) {
   int Stack[5];
 
-  Static[100] = 0; 
+  if (sizeof(Static) >= (sizeof(int) * 101)) {
+	Static[100] = 0; 
+  }
+	
   Stack[100] = 0; 
 
   for (int i = 0; i <= 5; i++) Stack [i] = 0;
@@ -12,7 +15,9 @@ int memcheckFailDemo(int* arrayStack, unsigned int arrayStackLen,
   int* array = new int[5];
   array[100] = 0; 
 
-  arrayStack[100] = 0; 
+  if (sizeof(arrayStack) >= (sizeof(int) * 101)) {
+	arrayStack[100] = 0; 
+  }
   arrayHeap[100] = 0; 
 
   for (unsigned int i = 0; i <= arrayStackLen; i++) {
